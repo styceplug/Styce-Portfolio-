@@ -849,6 +849,22 @@ function ProjectLinks({ project }) {
   )
 }
 
+function SeoProjectArchive() {
+  return (
+    <section className="seo-project-archive" aria-label="Full project portfolio">
+      <h2>Oluwaferanmi Olotu Project Portfolio</h2>
+      {projects.map((project) => (
+        <article key={project.title}>
+          <h2>{project.title}</h2>
+          <p>{project.productDetails}</p>
+          <p>{project.summary}</p>
+          <p>{project.subtitle}</p>
+        </article>
+      ))}
+    </section>
+  )
+}
+
 function ProjectVisualShowcase({ project, images }) {
   const isWeb = project.previewType === 'web'
   const hasShowcase = Boolean(project.showcase)
@@ -1755,6 +1771,8 @@ function App() {
           {hasMoreProjects ? 'View next 3' : 'Start over'}
         </button>
       </section>
+
+      <SeoProjectArchive />
 
       <section className="dark-feature-section" aria-label="Highlights">
         <div className="feature-grid">
