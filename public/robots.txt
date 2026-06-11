@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://styceplug.com/sitemap.xml
+Sitemap: https://styce.ng/sitemap.xml
