@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oluwaferanmi Olotu - Resume</title>
+    <style>
+      :root {
+        --ink: #082841;
+        --muted: #5c7284;
+        --cyan: #28bfdc;
+        --line: #d9e8ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #ffffff;
+        font-family: Inter, Arial, sans-serif;
+        line-height: 1.48;
+      }
+
+      main {
+        width: 8.27in;
+        min-height: 11.69in;
+        margin: 0 auto;
+        padding: 0.58in 0.62in;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid var(--cyan);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: 32px;
+        line-height: 1.05;
+      }
+
+      .role {
+        margin-bottom: 14px;
+        color: var(--cyan);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .summary {
+        max-width: 540px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 12.5px;
+      }
+
+      .contact {
+        display: grid;
+        gap: 7px;
+        min-width: 210px;
+        color: var(--muted);
+        font-size: 11.5px;
+        text-align: right;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      section {
+        padding-top: 22px;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        color: var(--cyan);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 1.25;
+      }
+
+      .meta {
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 30px;
+      }
+
+      .item {
+        break-inside: avoid;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .item:last-child {
+        border-bottom: 0;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 17px;
+        color: var(--muted);
+        font-size: 11.7px;
+      }
+
+      li + li {
+        margin-top: 4px;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 9px;
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .numbers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+
+      .number {
+        padding: 12px;
+        background: #eefbff;
+      }
+
+      .number strong {
+        display: block;
+        color: var(--cyan);
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .number span {
+        display: block;
+        margin-top: 6px;
+        color: var(--ink);
+        font-size: 10.5px;
+        font-weight: 800;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        main {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Oluwaferanmi Olotu</h1>
+          <p class="role">Senior Software Engineer & Product Designer</p>
+          <p class="summary">
+            Product-minded engineer building globally accessible mobile apps,
+            digital interfaces, and end-to-end systems for startups, creators,
+            and growing businesses. Strong across Flutter, Dart, real-time
+            product flows, Firebase, React, Node.js, REST APIs, and product
+            design systems.
+          </p>
+        </div>
+        <div class="contact">
+          <a href="mailto:styceplug@gmail.com">styceplug@gmail.com</a>
+          <a href="https://github.com/styceplug/">github.com/styceplug</a>
+          <a href="https://www.linkedin.com/in/uibystyce/">linkedin.com/in/uibystyce</a>
+          <a href="https://www.behance.net/ferrystyce">behance.net/ferrystyce</a>
+          <span>Global / Remote</span>
+        </div>
+      </header>
+
+      <section>
+        <h2>By The Numbers</h2>
+        <div class="numbers">
+          <div class="number"><strong>7+</strong><span>Years of engineering & design experience</span></div>
+          <div class="number"><strong>27+</strong><span>Public builds & applications launched</span></div>
+          <div class="number"><strong>20+</strong><span>Product screens shipped</span></div>
+          <div class="number"><strong>13k+</strong><span>Engaged community followers</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="item">
+          <h3>Senior Software Developer & Agency Lead</h3>
+          <p class="meta">Dream Software Studios | 2026</p>
+          <ul>
+            <li>Lead end-to-end software delivery across mobile, web, backend, and product design workstreams.</li>
+            <li>Ship large-scale products across logistics visibility, anti-fraud tooling, EV mobility, marketplace flows, and video-first creator networks.</li>
+            <li>Translate rough product ideas into scoped systems, polished interfaces, and working production builds.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Agency Builder & Tech Creator</h3>
+          <p class="meta">Dream Software Studios / @styceplug | 2025</p>
+          <ul>
+            <li>Expanded internal and client product work across Flutter, Dart, Firebase, React, and real-time interfaces.</li>
+            <li>Scaled an audience of over 13,000 followers through software development insights, tech content, and gadget reviews.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Flutter & Mobile Engineer</h3>
+          <p class="meta">Freelance / Product Builder | 2024</p>
+          <ul>
+            <li>Built launch-ready MVPs and mobile apps using Flutter, Dart, WebSockets, maps, geolocation, and real-time data flows.</li>
+            <li>Designed user journeys and interfaces that balance technical depth with calm, usable product experiences.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div>
+          <h2>Selected Projects</h2>
+          <div class="item">
+            <h3>Fyndr</h3>
+            <p class="meta">AI-powered marketplace for verified service providers</p>
+            <ul>
+              <li>Built customer and vendor journeys, service categories, job screens, onboarding, and marketplace discovery flows.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>OtoNav</h3>
+            <p class="meta">Delivery visibility and logistics management platform</p>
+            <ul>
+              <li>Shipped mobile and admin experiences for delivery visibility, rider tracking, order operations, and fraud prevention.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>HILITE</h3>
+            <p class="meta">Video-first football creator social network</p>
+            <ul>
+              <li>Architected video-heavy social flows with real-time likes, comments, sharing, feeds, and creator engagement surfaces.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Smart Swatcher</h3>
+            <p class="meta">Hair color formulation and stylist creator platform</p>
+            <ul>
+              <li>Designed color formulation, social feeds, live rooms, analytics, and creator profile experiences.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2>Technical Arsenal</h2>
+          <div class="chips">
+            <span class="chip">Flutter</span>
+            <span class="chip">Dart</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">WebSockets</span>
+            <span class="chip">React</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Maps APIs</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Design Systems</span>
+            <span class="chip">Responsive UI</span>
+            <span class="chip">Admin Dashboards</span>
+            <span class="chip">Product Strategy</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Computer Engineering</h3>
+          <p class="meta">Degree program with strong grounding in systems, software architecture, and engineering fundamentals.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

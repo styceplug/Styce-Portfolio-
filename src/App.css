@@ -99,7 +99,11 @@ main {
   display: grid;
   width: 20px;
   height: 20px;
+  border-radius: 999px;
   place-items: center;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
 }
 
 .social-rail img {
@@ -109,6 +113,23 @@ main {
   opacity: 0.68;
   filter: brightness(0) saturate(100%) invert(87%) sepia(22%) saturate(741%)
     hue-rotate(93deg) brightness(99%) contrast(87%);
+  transition:
+    filter 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-rail a:hover,
+.social-rail a:focus-visible {
+  background: rgba(40, 191, 220, 0.12);
+  transform: translateY(-2px);
+}
+
+.social-rail a:hover img,
+.social-rail a:focus-visible img {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(70%) saturate(925%)
+    hue-rotate(145deg) brightness(93%) contrast(87%);
 }
 
 .landing-page {
@@ -1611,17 +1632,65 @@ p {
 }
 
 .about-timeline article {
+  border-top: 1px solid rgba(8, 38, 63, 0.22);
+}
+
+.about-timeline article button {
   display: grid;
   grid-template-columns: minmax(250px, 0.85fr) minmax(420px, 1fr);
   gap: clamp(58px, 10vw, 150px);
-  padding: 54px 0;
-  border-top: 1px solid rgba(8, 38, 63, 0.22);
+  width: 100%;
+  align-items: start;
+  border: 0;
+  padding: 42px 0 20px;
+  background: transparent;
+  text-align: left;
+}
+
+.about-timeline article button::after {
+  content: "+";
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 0.08em;
+  color: var(--cyan);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.about-timeline article.is-open button::after {
+  content: "−";
 }
 
 .about-timeline article strong {
   color: var(--cyan);
   font-size: clamp(3.4rem, 8vw, 7.2rem);
   line-height: 0.95;
+}
+
+.about-timeline article button span {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: calc(100% - 58px);
+  color: var(--cyan);
+  font-size: 1.16rem;
+  font-weight: 900;
+}
+
+.journey-panel {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.85fr) minmax(420px, 1fr);
+  gap: clamp(58px, 10vw, 150px);
+  padding: 0 0 54px;
+}
+
+.journey-panel[hidden] {
+  display: none;
+}
+
+.journey-panel::before {
+  content: "";
 }
 
 .about-timeline article h2 {
@@ -1632,6 +1701,7 @@ p {
 
 .about-timeline article p {
   max-width: 520px;
+  margin-bottom: 0;
   font-size: 0.9rem;
   line-height: 1.75;
 }
@@ -2090,6 +2160,24 @@ p {
   line-height: 1.8;
 }
 
+.blog-source-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 18px;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.blog-source-link:hover,
+.blog-source-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .blog-list-card button,
 .blog-post-page > button {
   display: inline-flex;
@@ -2139,9 +2227,13 @@ p {
 }
 
 .blog-post-intro {
-  margin-bottom: 58px;
+  margin-bottom: 22px;
   color: var(--ink);
   font-weight: 700;
+}
+
+.blog-post-source {
+  margin-bottom: 48px;
 }
 
 .blog-post-page section {
@@ -2386,7 +2478,34 @@ p {
   }
 
   .social-rail {
-    display: none;
+    top: auto;
+    right: 18px;
+    bottom: 16px;
+    left: 18px;
+    z-index: 45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: auto;
+    min-height: 44px;
+    border: 1px solid rgba(40, 191, 220, 0.14);
+    border-radius: 999px;
+    padding: 9px 12px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 14px 36px rgba(8, 40, 65, 0.12);
+    backdrop-filter: blur(14px);
+  }
+
+  .social-rail a {
+    width: 25px;
+    height: 25px;
+  }
+
+  .social-rail img {
+    width: 17px;
+    height: 17px;
+    opacity: 0.78;
   }
 
   .landing-page,
@@ -2983,6 +3102,38 @@ p {
 
   .about-timeline article strong {
     font-size: 4.2rem;
+  }
+
+  .about-timeline article button,
+  .journey-panel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-timeline article button {
+    position: relative;
+    padding: 32px 44px 28px 0;
+  }
+
+  .about-timeline article button::after {
+    position: absolute;
+    top: 42px;
+    right: 0;
+  }
+
+  .about-timeline article button span {
+    grid-column: auto;
+    grid-row: auto;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .journey-panel {
+    padding-bottom: 38px;
+  }
+
+  .journey-panel::before {
+    display: none;
   }
 
   .about-timeline article h2 {

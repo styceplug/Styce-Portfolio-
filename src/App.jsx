@@ -12,6 +12,8 @@ import linkedinLogo from './assets/logo/logo-linkedin.png'
 import behanceLogo from './assets/logo/logo-behance.png'
 import githubLogo from './assets/logo/logo-github.png'
 import snapchatLogo from './assets/logo/logo-snapchat.png'
+import whatsappLogo from './assets/logo/logo-whatsapp.png'
+import tiktokLogo from './assets/logo/logo-tiktok.png'
 import prioritizeCard from './assets/card/prioritize.png'
 import zoneBg from './assets/card/zone-bg.png'
 import scoopBg from './assets/card/scoop-bg.png'
@@ -33,6 +35,10 @@ const navItems = [
   ['Contact', 'contact'],
 ]
 
+const resumeUrl = '/oluwaferanmi-olotu-resume.pdf'
+const linkedinUrl = 'https://www.linkedin.com/in/uibystyce/'
+const whatsappUrl = 'https://wa.me/2348023590291'
+
 const socialLinks = [
   ['Behance', behanceLogo, 'https://www.behance.net/ferrystyce'],
   ['Dribbble', dribbbleLogo, 'https://dribbble.com/Styce'],
@@ -42,7 +48,9 @@ const socialLinks = [
     instagramLogo,
     'https://www.instagram.com/styce_btw?igsh=MXN5YTY2c2V6YXF4Mg%3D%3D&utm_source=qr',
   ],
-  ['LinkedIn', linkedinLogo, 'https://www.linkedin.com/in/uibystyce/'],
+  ['LinkedIn', linkedinLogo, linkedinUrl],
+  ['WhatsApp', whatsappLogo, whatsappUrl],
+  ['TikTok', tiktokLogo, 'https://www.tiktok.com/@styceplug?_r=1&_t=ZS-977lDDhaxcu'],
   ['Snapchat', snapchatLogo, 'https://snapchat.com/t/MQVEAD8c'],
   ['Twitter', twitterLogo, 'https://x.com/i_am_styce?s=21'],
 ]
@@ -148,80 +156,86 @@ const getWorkImage = (path) => workImages[`./assets/work/${path}`]
 
 const blogPosts = [
   {
-    title: 'Building Products That Feel Calm Under Pressure',
+    title: 'AI Is Making Product UX More Ambient',
+    category: 'Product thinking',
+    image: getWorkImage('fyndr/landing-hero.png'),
+    sourceLabel: 'HAX framework',
+    sourceUrl: 'https://arxiv.org/abs/2512.11979',
+    excerpt:
+      'The next wave of product design is less about adding a giant AI button and more about making assistance feel contextual, quiet, and useful inside existing workflows.',
+    intro:
+      'AI is moving from novelty feature to background infrastructure. The interesting design question is no longer “where do we place the chatbot?” It is how products can become more helpful without becoming noisier, less predictable, or harder to trust.',
+    sections: [
+      {
+        heading: 'Assistance Should Stay In The Flow',
+        body:
+          'The best AI product patterns are usually not loud. A marketplace can suggest safer request wording, a logistics app can summarize delivery risk, and a creator tool can recommend the next action without interrupting the user. That kind of assistance works because it is embedded in the job the user already came to do.',
+      },
+      {
+        heading: 'Trust Needs Interface Detail',
+        body:
+          'AI features need visible confidence, editable outputs, and clear recovery paths. Users should know what changed, why it was suggested, and how to undo it. Without that layer of interface honesty, even a powerful model can make the product feel risky.',
+      },
+      {
+        heading: 'The Designer’s Job Gets More Important',
+        body:
+          'As AI handles more generation, the designer’s responsibility shifts toward orchestration: deciding when automation should appear, how much control the user keeps, and how the product communicates uncertainty without creating anxiety.',
+      },
+    ],
+  },
+  {
+    title: 'Adaptive Apps Are Becoming The New Baseline',
+    category: 'Mobile',
+    image: getWorkImage('rheel/landing-about.png'),
+    sourceLabel: 'Flutter docs',
+    sourceUrl: 'https://docs.flutter.dev/ui/adaptive-responsive',
+    excerpt:
+      'Phones, tablets, foldables, and desktop-class mobile modes are forcing product teams to think beyond one fixed mobile canvas.',
+    intro:
+      'Responsive design used to mean making a website shrink gracefully. For modern apps, it means building product surfaces that adapt to more screen sizes, input modes, navigation patterns, and user contexts without feeling like separate products.',
+    sections: [
+      {
+        heading: 'One Screen Is Not The Product',
+        body:
+          'A property app, marketplace, or logistics dashboard should not simply stretch on larger screens. More room should reveal more useful context: maps beside listings, filters beside results, order history beside live status, and actions closer to the data they affect.',
+      },
+      {
+        heading: 'Flutter Makes This Practical',
+        body:
+          'Flutter’s adaptive and responsive guidance makes it easier to build one codebase that respects different screen classes. The real value is not just speed; it is keeping product behavior consistent while allowing layouts to change intelligently.',
+      },
+      {
+        heading: 'Design Systems Need Breakpoints Too',
+        body:
+          'Buttons, cards, forms, and navigation should have rules for phone, tablet, and wide layouts. When these decisions are captured inside the design system, teams stop patching each screen manually and start shipping interfaces that feel deliberate everywhere.',
+      },
+    ],
+  },
+  {
+    title: 'Real-Time Products Need Calm State Design',
     category: 'Engineering',
     image: getWorkImage('otonav/landing-hero.png'),
+    sourceLabel: 'Firebase docs',
+    sourceUrl: 'https://firebase.google.com/docs/firestore/query-data/listen',
     excerpt:
-      'A practical look at how I think through dashboards, delivery visibility, anti-fraud flows, and real-time mobile experiences without making the interface feel heavy.',
+      'Live tracking, chat, dispatch, order status, and collaborative products are only useful when the interface explains what is happening right now.',
     intro:
-      'Complex products often fail when the interface starts reflecting the complexity of the system underneath. I prefer the opposite approach: let the architecture carry the pressure while the interface stays calm, readable, and direct.',
+      'Real-time systems can make software feel alive, but they can also make it feel unstable. The interface has to translate constant backend changes into states that users can understand, trust, and act on.',
     sections: [
       {
-        heading: 'Start With The Job',
+        heading: 'Live Data Needs Human Language',
         body:
-          'Before opening Figma or writing code, I map what the product is trying to make easier. In logistics tools like Otonav, that means separating rider visibility, vendor actions, admin review, and fraud prevention into clear surfaces instead of forcing every user into the same mental model.',
+          'It is not enough to update a screen instantly. Users need labels like “waiting for rider,” “driver is nearby,” “payment pending,” or “vendor accepted.” These states reduce confusion because they turn infrastructure events into human-readable progress.',
       },
       {
-        heading: 'Design For Feedback',
+        heading: 'Optimistic UI Requires Recovery',
         body:
-          'Real-time systems need constant feedback. Users should know when an order moved, when a rider location changed, when a task is pending, and when the system is waiting for confirmation. These small signals reduce anxiety and make the product feel reliable.',
+          'Fast interfaces often show changes before the server confirms them. That can feel great, but only when failure states are designed too. Undo actions, retry controls, and clear error messages are part of the experience, not edge-case decoration.',
       },
       {
-        heading: 'Build The Flow Twice',
+        heading: 'The Best Real-Time UI Feels Quiet',
         body:
-          'I usually think through the experience twice: once as a designer looking for clarity, and once as an engineer checking state, edge cases, permissions, and data flow. The final product gets stronger when both perspectives shape the same decision.',
-      },
-    ],
-  },
-  {
-    title: 'Why Flutter Works For Startup MVPs',
-    category: 'Mobile',
-    image: getWorkImage('fyndr/landing-hero.png'),
-    excerpt:
-      'Flutter gives startup teams a fast path from product idea to working mobile experience, especially when the product needs to launch, test, and evolve quickly.',
-    intro:
-      'For startups, the first serious version of a product has to do many things at once. It has to look credible, work across devices, leave room for iteration, and avoid burning time on duplicated platform work.',
-    sections: [
-      {
-        heading: 'Speed Without Throwaway Work',
-        body:
-          'Flutter lets me move quickly without treating the first build like a disposable prototype. The same structure that powers an MVP can grow into a fuller product when the architecture is planned with enough discipline.',
-      },
-      {
-        heading: 'Consistent Interfaces',
-        body:
-          'Products like Fyndr need customer flows, vendor flows, job screens, and onboarding to feel like one ecosystem. Flutter helps keep the interface language consistent while still allowing each user type to have its own workflow.',
-      },
-      {
-        heading: 'Architecture Still Matters',
-        body:
-          'Fast does not mean careless. Real-time data, geolocation, payments, and multi-role state all need proper architecture. The best Flutter work is not just pretty screens; it is a working system that can handle pressure.',
-      },
-    ],
-  },
-  {
-    title: 'Designing Web Portfolios That Actually Sell The Work',
-    category: 'Design',
-    image: getWorkImage('shubby/homepage.png'),
-    excerpt:
-      'A good portfolio is not a gallery. It is a focused product experience that helps a client understand the person, the offer, the proof, and the next step.',
-    intro:
-      'When I built the Social Media Manager Portfolio for Olasubomi Stephanie, the goal was not just to make a pretty page. The goal was to make her work easier to understand and easier to trust.',
-    sections: [
-      {
-        heading: 'Make The Offer Obvious',
-        body:
-          'A portfolio hero should answer the first question quickly: what does this person do? From there, the page can move into proof, selected work, tools, services, and contact without making visitors decode the brand.',
-      },
-      {
-        heading: 'Use Layout As Direction',
-        body:
-          'Strong hierarchy matters. Big type, deliberate spacing, and focused sections help visitors move through the story. The design should guide attention instead of decorating around the content.',
-      },
-      {
-        heading: 'End With A Clear Path',
-        body:
-          'The best portfolio pages make the next step obvious. Whether the visitor wants to review work, understand services, or start a conversation, the interface should make that journey feel natural.',
+          'A delivery platform or marketplace should not flash every small update like an alarm. It should prioritize what changed, who needs to act, and what can wait. Calm state design is what turns live data into a usable product.',
       },
     ],
   },
@@ -1065,6 +1079,7 @@ function ProjectDetail({ project, moreProjects, onBack, onSelectProject }) {
 
 function AboutPage({ onNavigate }) {
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
+  const [openJourneyYear, setOpenJourneyYear] = useState(careerTimeline[0].year)
 
   const handleAboutNavClick = (event, label, target) => {
     event.preventDefault()
@@ -1119,7 +1134,13 @@ function AboutPage({ onNavigate }) {
 
       <aside className="social-rail about-social-rail" aria-label="Social profiles">
         {socialLinks.map(([label, icon, href]) => (
-          <a href={href === '#contact' ? '#about-contact' : href} key={label} aria-label={label}>
+          <a
+            href={href === '#contact' ? '#about-contact' : href}
+            key={label}
+            aria-label={label}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noreferrer' : undefined}
+          >
             <img src={icon} alt="" />
           </a>
         ))}
@@ -1143,7 +1164,9 @@ function AboutPage({ onNavigate }) {
               Flutter, Dart, real-time mobile flows, mapping, and complete
               system architecture driven through Dream Software Studios.
             </p>
-            <a href="#about-contact">Download Resume</a>
+            <a href={resumeUrl} download>
+              Download Resume
+            </a>
           </div>
         </div>
       </section>
@@ -1209,10 +1232,17 @@ function AboutPage({ onNavigate }) {
         </p>
         <h2 className="journey-heading">The Journey</h2>
         {careerTimeline.map((item) => (
-          <article key={item.year}>
-            <strong>{item.year}</strong>
-            <div>
-              <h2>{item.role}</h2>
+          <article className={openJourneyYear === item.year ? 'is-open' : undefined} key={item.year}>
+            <button
+              type="button"
+              aria-expanded={openJourneyYear === item.year}
+              aria-controls={`journey-${item.year}`}
+              onClick={() => setOpenJourneyYear(item.year)}
+            >
+              <strong>{item.year}</strong>
+              <span>{item.role}</span>
+            </button>
+            <div className="journey-panel" id={`journey-${item.year}`} hidden={openJourneyYear !== item.year}>
               <p>{item.text}</p>
             </div>
           </article>
@@ -1285,7 +1315,13 @@ function BlogPage({ posts, onOpenPost, onNavigate }) {
 
       <aside className="social-rail about-social-rail" aria-label="Social profiles">
         {socialLinks.map(([label, icon, href]) => (
-          <a href={href === '#contact' ? '#blog-contact' : href} key={label} aria-label={label}>
+          <a
+            href={href === '#contact' ? '#blog-contact' : href}
+            key={label}
+            aria-label={label}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noreferrer' : undefined}
+          >
             <img src={icon} alt="" />
           </a>
         ))}
@@ -1301,6 +1337,11 @@ function BlogPage({ posts, onOpenPost, onNavigate }) {
                 <span>{post.category}</span>
                 <h2>{post.title}</h2>
                 <p>{post.excerpt}</p>
+                {post.sourceUrl && (
+                  <a className="blog-source-link" href={post.sourceUrl} target="_blank" rel="noreferrer">
+                    Source: {post.sourceLabel}
+                  </a>
+                )}
                 <button type="button" onClick={() => onOpenPost(post)}>
                   Read more
                 </button>
@@ -1371,7 +1412,13 @@ function BlogPostPage({ post, onBack, onNavigate }) {
 
       <aside className="social-rail about-social-rail" aria-label="Social profiles">
         {socialLinks.map(([label, icon, href]) => (
-          <a href={href === '#contact' ? '#blog-contact' : href} key={label} aria-label={label}>
+          <a
+            href={href === '#contact' ? '#blog-contact' : href}
+            key={label}
+            aria-label={label}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noreferrer' : undefined}
+          >
             <img src={icon} alt="" />
           </a>
         ))}
@@ -1385,6 +1432,11 @@ function BlogPostPage({ post, onBack, onNavigate }) {
         <h1>{post.title}</h1>
         <img src={post.image} alt="" />
         <p className="blog-post-intro">{post.intro}</p>
+        {post.sourceUrl && (
+          <a className="blog-source-link blog-post-source" href={post.sourceUrl} target="_blank" rel="noreferrer">
+            Reference: {post.sourceLabel}
+          </a>
+        )}
         {post.sections.map((section) => (
           <section key={section.heading}>
             <h2>{section.heading}</h2>
@@ -1407,7 +1459,9 @@ function AboutContactSection({ id = 'about-contact' }) {
       </div>
       <div className="about-linkedin-card">
         <p>Would like to learn about my journey as a designer?</p>
-        <a href={`#${id}`}>LinkedIn</a>
+        <a href={linkedinUrl} target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
         <span>Because resumes are old fashioned now</span>
         <strong>in</strong>
       </div>
@@ -1585,7 +1639,13 @@ function App() {
 
       <aside className="social-rail" aria-label="Social profiles">
         {socialLinks.map(([label, icon, href]) => (
-          <a href={href} key={label} aria-label={label}>
+          <a
+            href={href}
+            key={label}
+            aria-label={label}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noreferrer' : undefined}
+          >
             <img src={icon} alt="" />
           </a>
         ))}
