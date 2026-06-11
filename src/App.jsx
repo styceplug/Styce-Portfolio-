@@ -346,10 +346,10 @@ const projectCatalog = [
   {
     title: 'Fyndr Service Marketplace',
     subtitle:
-      'A two-sided local-services marketplace for customers, vendors, job requests, and service discovery.',
+      'A service provider and decluttering platform for customers, vendors, job requests, and local service discovery.',
     productDetails: 'Local Services Marketplace for Users and Vendors',
     summary:
-      'Fyndr helps customers discover trusted local professionals while giving vendors a dedicated surface to manage service visibility, incoming jobs, and customer requests. The product balances user discovery with vendor operations in a single mobile ecosystem.',
+      'Fyndr is a service provider and decluttering platform that helps customers discover trusted professionals while giving vendors a dedicated surface to manage service visibility, incoming jobs, customer requests, and decluttering workflows. The product balances user discovery with vendor operations in a single mobile ecosystem.',
     challenge:
       'The product needed to support both customer and vendor journeys without making the app feel fragmented. Users needed fast service discovery, while vendors needed job clarity, profile control, and a smooth way to switch between marketplace tasks.',
     conclusion:
@@ -543,10 +543,10 @@ const projectCatalog = [
   {
     title: 'OtoNav Onboarding',
     subtitle:
-      'A logistics platform with rider, vendor, and admin experiences for orders and tracking.',
-    productDetails: 'Role-Based Logistics Product Experience',
+      'A delivery visibility and anti-fraud tool with rider, vendor, and admin experiences for orders and tracking.',
+    productDetails: 'Delivery Visibility and Anti-Fraud Tool',
     summary:
-      'OtoNav is a logistics platform with rider, vendor, and admin surfaces for orders, route visibility, delivery tracking, analytics, and operational control. The project covers multiple product roles without losing the clarity of each workflow.',
+      'OtoNav is a delivery visibility and anti-fraud tool with rider, vendor, and admin surfaces for orders, route visibility, delivery tracking, analytics, and operational control. The project covers multiple product roles without losing the clarity of each workflow.',
     challenge:
       'The challenge was presenting a broad logistics system across multiple roles without blurring rider, vendor, and admin responsibilities. Each user type needed a clear home, action path, and feedback loop.',
     conclusion:
@@ -1725,30 +1725,30 @@ function App() {
         <h2>Bringing stellar results for every client.</h2>
         <div className="project-preview-grid">
           {visibleProjects.map((project) => (
-            <button
+            <article
               className="landing-project-card"
-              type="button"
               key={project.title}
-              onClick={() => openProject(project)}
               style={{ '--preview-bg': project.previewBg, '--phone-frame': project.frameColor }}
             >
-              {project.previewType === 'web' ? (
-                <WebProjectPreview project={project} />
-              ) : (
-                <div className="phone-preview">
-                  {project.images.slice(0, 2).map((image, index) => (
-                    <img
-                      className={`work-shot ${index === 0 ? 'primary-shot' : 'secondary-shot'}`}
-                      src={image}
-                      alt=""
-                      key={image}
-                    />
-                  ))}
-                </div>
-              )}
-              <h3>{project.title}</h3>
+              <button type="button" onClick={() => openProject(project)} aria-label={`View ${project.title} case study`}>
+                {project.previewType === 'web' ? (
+                  <WebProjectPreview project={project} />
+                ) : (
+                  <div className="phone-preview">
+                    {project.images.slice(0, 2).map((image, index) => (
+                      <img
+                        className={`work-shot ${index === 0 ? 'primary-shot' : 'secondary-shot'}`}
+                        src={image}
+                        alt=""
+                        key={image}
+                      />
+                    ))}
+                  </div>
+                )}
+              </button>
+              <h2>{project.title}</h2>
               <p>{project.subtitle}</p>
-            </button>
+            </article>
           ))}
         </div>
         <button className="outline-action" type="button" onClick={showNextProjects}>
