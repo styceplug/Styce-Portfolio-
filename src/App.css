@@ -101,6 +101,7 @@ main {
   height: 20px;
   border-radius: 999px;
   place-items: center;
+  outline-offset: 4px;
   transition:
     background 180ms ease,
     transform 180ms ease;
@@ -110,26 +111,28 @@ main {
   width: 18px;
   height: 18px;
   object-fit: contain;
-  opacity: 0.68;
-  filter: brightness(0) saturate(100%) invert(87%) sepia(22%) saturate(741%)
-    hue-rotate(93deg) brightness(99%) contrast(87%);
+  opacity: 0.92;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(68%) saturate(663%)
+    hue-rotate(142deg) brightness(82%) contrast(91%);
   transition:
     filter 180ms ease,
     opacity 180ms ease,
     transform 180ms ease;
 }
 
-.social-rail a:hover,
-.social-rail a:focus-visible {
-  background: rgba(40, 191, 220, 0.12);
-  transform: translateY(-2px);
-}
+@media (hover: hover) and (pointer: fine) {
+  .social-rail a:hover,
+  .social-rail a:focus-visible {
+    background: rgba(40, 191, 220, 0.14);
+    transform: translateY(-2px);
+  }
 
-.social-rail a:hover img,
-.social-rail a:focus-visible img {
-  opacity: 1;
-  filter: brightness(0) saturate(100%) invert(59%) sepia(70%) saturate(925%)
-    hue-rotate(145deg) brightness(93%) contrast(87%);
+  .social-rail a:hover img,
+  .social-rail a:focus-visible img {
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(62%) sepia(85%) saturate(899%)
+      hue-rotate(142deg) brightness(98%) contrast(93%);
+  }
 }
 
 .landing-page {
