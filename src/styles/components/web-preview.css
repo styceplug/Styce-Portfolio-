@@ -1,0 +1,112 @@
+.web-preview {
+  display: grid;
+  height: 298px;
+  place-items: center;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--web-accent) 18%, transparent), transparent 28%),
+    var(--preview-bg, #e6f7ff);
+}
+
+.browser-frame {
+  width: min(82%, 360px);
+  min-height: 205px;
+  overflow: hidden;
+  border: 8px solid #ffffff;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 38px rgba(6, 57, 83, 0.15);
+}
+
+.browser-toolbar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: 30px;
+  padding: 0 14px;
+  background: #f2f8fb;
+}
+
+.browser-toolbar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--web-accent) 72%, #ffffff);
+}
+
+.browser-body {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 14px;
+  min-height: 175px;
+  padding: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--web-accent) 14%, #ffffff), #ffffff 58%);
+}
+
+.browser-body.has-screenshot {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.browser-screenshot {
+  display: block;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.browser-copy {
+  grid-row: span 3;
+  align-self: center;
+}
+
+.browser-copy strong,
+.browser-copy i {
+  display: block;
+}
+
+.browser-copy strong {
+  max-width: 145px;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.browser-copy i {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.browser-panel {
+  min-height: 34px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--web-accent) 18%, #ffffff);
+}
+
+.browser-panel.large {
+  min-height: 78px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--web-accent) 74%, #ffffff), color-mix(in srgb, var(--web-accent) 38%, #ffffff));
+}
+
+.browser-panel.short {
+  width: 70%;
+}
+
+.web-preview-compact .browser-frame {
+  width: min(82%, 340px);
+}
+
+@media (max-width: 640px) {
+.web-preview {
+    height: 246px;
+  }
+}

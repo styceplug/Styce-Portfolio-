@@ -1,0 +1,85 @@
+/*
+ * Subtle motion. Everything here is opt-out for people who ask their system
+ * for reduced motion, and none of it hides content when JavaScript is off.
+ */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Page intros ease in on load and on every client-side navigation. */
+  .hero-copy > *,
+  .page-hero > *,
+  .detail-hero > *,
+  .hero-image-wrap {
+    animation: rise-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-copy > :nth-child(2),
+  .page-hero > :nth-child(2),
+  .detail-hero > :nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  .hero-copy > :nth-child(3),
+  .page-hero > :nth-child(3),
+  .detail-hero > :nth-child(3) {
+    animation-delay: 160ms;
+  }
+
+  .hero-copy > :nth-child(n + 4),
+  .page-hero > :nth-child(n + 4),
+  .detail-hero > :nth-child(n + 4) {
+    animation-delay: 240ms;
+  }
+
+  .hero-image-wrap {
+    animation-delay: 140ms;
+    animation-duration: 900ms;
+  }
+
+  /* Scroll reveal (see src/motion/useScrollReveal.js). */
+  html.reveal-ready [data-reveal] {
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.reveal-ready [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+
+  html.reveal-ready [data-reveal-step='1'] {
+    transition-delay: 90ms;
+  }
+
+  html.reveal-ready [data-reveal-step='2'] {
+    transition-delay: 180ms;
+  }
+
+  /* Hover: card media lifts a touch and the screenshot drifts forward. */
+  .landing-project-card .browser-screenshot {
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .landing-project-card:hover .browser-screenshot {
+    transform: scale(1.03);
+  }
+}
+
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

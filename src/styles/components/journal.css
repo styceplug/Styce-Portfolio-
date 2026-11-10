@@ -1,0 +1,67 @@
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: clamp(28px, 3.5vw, 46px);
+}
+
+.journal-card-media {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--pale);
+}
+
+.journal-card-media img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 320ms ease;
+}
+
+.journal-card:hover .journal-card-media img {
+  transform: scale(1.04);
+}
+
+.journal-card-meta {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--cyan);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.journal-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-card h3 a:hover {
+  color: var(--cyan);
+}
+
+.journal-card p {
+  font-size: 0.76rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 980px) {
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journal-card:hover .journal-card-media img {
+    transform: none;
+  }
+}
