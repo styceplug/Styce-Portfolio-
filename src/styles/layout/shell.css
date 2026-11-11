@@ -1,10 +1,11 @@
 .site-shell {
   position: relative;
+  overflow-x: clip;
 }
 
 main {
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100svh;
   background: #ffffff;
 }
